@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #80B6B0;
+}
+.bdCard{
+    position: relative;
+    height: 100vh;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+}
+.bdCard:hover {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+.bdCard:hover .cardFront{
+    transform: rotateY(-160deg);
+}
+.bdCard:hover .cardFront img{
+    visibility: hidden;
+}
+.cardFront {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2), 0 10px 100px rgba(0, 0, 0, 0.4);
+    transition: 1s;
+}
+.cardFront img{
+    width: 100%;
+    display: block;
+}
+.cardInside {
+    position: absolute;
+    background-color: #fff;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+.cardInside img{
+    width: 100%;
+    display: block;
+}
